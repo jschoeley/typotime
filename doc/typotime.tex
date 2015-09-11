@@ -4,10 +4,13 @@
   12pt
 ]{scrartcl}
 
-\usepackage{jonas}
 
-\bibliography{/home/jon/lucile/share/hive/sci/refs/refs.bib}
-\hyphenation{}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{amsmath}
+%\usepackage{jonas}
 
 %%%% Meta data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -20,165 +23,153 @@
   pdfcreator  =pdflatex
 ]{hyperref}
 
-\title{A Typology of \\Demographic Time Scales}
-\author{Jonas Schöley}
-
 %%%% Titlepage %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-\maketitle
-
-\begin{abstract}
-This technical paper describes the six demographic time scales age, period, birth cohort, death cohort, thanatological age and lifespan and their interrelations. It introduces definitions and technical terms necessary for a classification of the scales and their combinations. The aim of this work is to build up to the \enquote{unified model of demographic time} proposed by \cite{Riffe2015}, which unifies all 6 time scales in a single geometrical space.
-\end{abstract}
-
 %%%% Text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{description}
-  \item[Demographic time scales] are measurements of time used in demography. We differentiate 6 time scales: Age, calender time, birth cohort, death cohort, thanatological age (time until death) and lifespan.
-  \item[The Lexis diagram] is a Cartesian plane with calendar time on the abscissa and age on the ordinate. Cohort diagonals show the relation between age and period.
-  \item[A temporal plane] is any $xy$ combination of 2 demographic time scales.
-  \item[A temporal space] is any $xyz$ combination of 3 demographic time scales.
-  \item[Given scales] are demographic time scales which are mapped to the main axis of a temporal plane or a temporal space (age and period in case of the Lexis diagram).
-  \item[Derived scales] are demographic time scales which are calculated from the given scales (cohort in case of the Lexis diagram).
-  \item[Lexis scales] are the three scales constituting the Lexis diagram: Age, calendar time and cohort.
-  \item[Thanatological scales] are scales which take into account the end of life: Death cohort, time until death and lifespan.
-  \item[An informative combination] is any combination of given scales which allows for the calculation of derived scales.
-  \item[A non-informative combination] is any combination of given scales which does not allow for the calculation of derived scales.
-\end{description}
-
-\begin{table}[!htb]
-  \small
-  \begin{tabularx}{\textwidth}{p{0.23\textwidth}p{0.06\textwidth}XX}
-  \toprule
-  \textbf{Time Scale} & \textbf{Short} & \textbf{Demographic Defntn.} & \textbf{Event History Defntn.} \\
-  \midrule
-  Age & $A$ & Time since birth & Time since study entry \\
-  Period & $P$ & Calendar time & Calendar time \\
-  Birth cohort & $C$ & Calendar time of birth & Calendar time of study entry \\
-  Death cohort & $D$ & Calendar time of death & Calendar time of event \\
-  Thanatological Age & $T$ & Time until death & Time until event \\
-  Lifespan & $L$ & Age at death & Exposure time \\
-  \bottomrule
-  \end{tabularx}
-  \caption{Definitions of various demographic time scales.}
-  \label{tab:def}
-\end{table}
-
-\clearpage
 
 \begin{center}
   \small
-  \begin{longtable}{m{0.1\textwidth}m{0.15\textwidth}m{0.4\textwidth}m{0.17\textwidth}}
+  \begin{longtable}{m{0.13\textwidth}m{0.37\textwidth}m{0.17\textwidth}m{0.17\textwidth}}
   \toprule
-  \multicolumn{4}{m{0.9\textwidth}}{\footnotesize\emph{Note:} The temporal planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} \\
+  \multicolumn{4}{m{0.9\textwidth}}{\footnotesize \emph{Note:} The temporal planes are named after the two given time scales. The derived scale is appended in parentheses. Contrary to mathematical convention we name the ordinate scale first and the abscissa scale second. This is to be consistent with the established $APC$ and $ACP$ terms.} \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{Variations of the Lexis Diagram}} \\
   \midrule
   %%%% AP
-  $AP(C)$ & $C = P - A$ &
+  $$\begin{aligned}
+    &AP(C) \\
+    &C = P - A
+  \end{aligned}$$ &
   The $AP(C)$ temporal plane constitutes the classical Lexis diagram. &
-  \includegraphics[width = \linewidth]{../fig/APc.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/APc.pdf} &
+  \includegraphics[width = \linewidth]{../fig/APc_iso.pdf}  \\
   \midrule
   %%%% AC
-  $AC(P)$ & $P = C + A$ &
+  $$\begin{aligned}
+    &AC(P) \\
+    &P = C + A
+  \end{aligned}$$ &
   The $AC(P)$ temporal plane is equivalent to the Lexis diagram only that birth cohort is given and period is embedded instead of the other way round. &
-  \includegraphics[width = \linewidth]{../fig/ACp.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/ACp.pdf} &
+  \includegraphics[width = \linewidth]{../fig/ACp_iso.pdf}  \\
   \midrule
-  %%%% PC
-  $CP(A)$ & $A = P - C$ &
+  %%%% CP
+  $$\begin{aligned}
+    &CP(A) \\
+    &A = P - C
+  \end{aligned}$$ &
   The $CP(A)$ temporal plane is equivalent to the Lexis diagram only that birth cohort is given and age is embedded instead of the other way round. &
-  \includegraphics[width = \linewidth]{../fig/CPa.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/CPa.pdf} &
+  \includegraphics[width = \linewidth]{../fig/CPa_iso.pdf}  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{2-D Combinations of Thanatological Scales}} \\
   \midrule
   %%%% LD
-  $LD(C)$ & $C = D - L$ & 
+  $$\begin{aligned}
+    &LD(C) \\
+    &C = D - L
+  \end{aligned}$$ &
   foo. &
-  \includegraphics[width = \linewidth]{../fig/LDc.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/LDc.pdf} &
+  \includegraphics[width = \linewidth]{../fig/LDc_iso.pdf}  \\
   \midrule
-  %%%% LT
-  $TL(A)$ & $A = L - T$ & 
+  %%%% TL
+  $$\begin{aligned}
+    &TL(A) \\
+    &A = L - T
+  \end{aligned}$$ &
   foo. &
-  \includegraphics[width = \linewidth]{../fig/TLa.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/TLa.pdf} &
+  \includegraphics[width = \linewidth]{../fig/TLa_iso.pdf}  \\
   \midrule
   %%%% TD
-  $TD(P)$ & $P = D - T$ &
+  $$\begin{aligned}
+    &TD(P) \\
+    &P = D - T
+  \end{aligned}$$ &
   foo. &
-  \includegraphics[width = \linewidth]{../fig/TDp.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/TDp.pdf} &
+  \includegraphics[width = \linewidth]{../fig/TDp_iso.pdf}  \\
   \midrule
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \multicolumn{4}{c}{\textsc{2-D Combinations of Lexis Scales and Thanatological Scales}} \\
   \midrule
   %%%% AL
-  $AL(T)$ & $T = A - L$ &
+  $$\begin{aligned}
+    &AL(T) \\
+    &T = A - L
+  \end{aligned}$$ &
   foo. &
-  \includegraphics[width = \linewidth]{../fig/ALt.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/ALt.pdf} &
+  \includegraphics[width = \linewidth]{../fig/ALt_iso.pdf}  \\
   \midrule
   %%%% LP
-  $LP(-)$ & $-$ &
+  $LP(-)$ &
   The $LP$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just lifespan and period. &
-  \includegraphics[width = \linewidth]{../fig/LP.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/LP.pdf} &
+  \includegraphics[width = \linewidth]{../fig/LP_iso.pdf}  \\
   \midrule
   %%%% PD
-  $PD(T)$ & $T = D - P$ &
+  $$\begin{aligned}
+    &PD(T) \\
+    &T = D - P
+  \end{aligned}$$ &
   foo. &
-  \includegraphics[width = \linewidth]{../fig/PDt.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/PDt.pdf} &
+  \includegraphics[width = \linewidth]{../fig/PDt_iso.pdf}  \\
   \midrule
   %%%% CD
-  $CD(L)$ & $L = D - C$ &
+  $$\begin{aligned}
+    &CD(L) \\
+    &L = D - C
+  \end{aligned}$$ &
   foo. &
-  \includegraphics[width = \linewidth]{../fig/CDl.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/CDl.pdf} &
+  \includegraphics[width = \linewidth]{../fig/CDl_iso.pdf}  \\
   \midrule
   %%%% CT
-  $CT(-)$ & $-$ &
+  $CT(-)$ &
   The $CT$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just cohort and thanatological age. &
-  \includegraphics[width = \linewidth]{../fig/CT.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/CT.pdf} &
+  \includegraphics[width = \linewidth]{../fig/CT_iso.pdf}  \\
   \midrule
   %%%% TA
-  $TA(L)$ & $L = T + A$ &
+  $$\begin{aligned}
+    &TA(L) \\
+    &L = T + A
+  \end{aligned}$$ &
   The time already lived and the time still left sum up to the total lifespan. &
-  \includegraphics[width = \linewidth]{../fig/TAl.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/TAl.pdf} &
+  \includegraphics[width = \linewidth]{../fig/TAl_iso.pdf}  \\
   \midrule
   %%%% AD
-  $AD(-)$ & $-$ &
+  $AD(-)$ &
   The $AD$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just death cohort and age. &
-  \includegraphics[width = \linewidth]{../fig/AD.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/AD.pdf} &
+  \includegraphics[width = \linewidth]{../fig/AD_iso.pdf}  \\
   \midrule
   %%%% LC
-  $LC(D)$ & $D = C + L$ &
+  $$\begin{aligned}
+    &LC(D) \\
+    &D = C + L
+  \end{aligned}$$ &
   foo. &
-  \includegraphics[width = \linewidth]{../fig/LCd.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/LCd.pdf} &
+  \includegraphics[width = \linewidth]{../fig/LCd_iso.pdf}  \\
   \midrule
   %%%% TP
-  $TP(-)$ & $-$ &
+  $TP(-)$ &
   The $TP$ plane is \emph{non-informative}. No additional dimensions can be derived knowing just thanatological age and period. &
-  \includegraphics[width = \linewidth]{../fig/TP.pdf} \\
+  \includegraphics[width = \linewidth]{../fig/TP.pdf} &
+  \includegraphics[width = \linewidth]{../fig/TP_iso.pdf}  \\
   \bottomrule
   \end{longtable}
-  %\caption{Temporal planes: 2-d combinations of demographic time scales.}
-  %\label{tab:plane}
 \end{center}
 
 \clearpage
-
-%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\sloppy
-\printbibliography
-
-%\clearpage
-
-%%%% Appendix %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% appendix figures follow A1, A2, B1... scheme
-%\renewcommand\thefigure{\thesection.\arabic{figure}}
-%\setcounter{figure}{0}
-
-%\begin{appendix}
-%\end{appendix}
 
 \end{document}
