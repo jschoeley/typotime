@@ -83,7 +83,7 @@ DrawDiatimeIsotropic <- function(x_label = "P", y_label = "A",
   vp <- viewport(x = 0.5, y = 0.5,
                  width = unit(5, "cm"),
                  height = unit(5, "cm"),
-                 clip = "on")
+                 clip = "off")
   pushViewport(vp)
 
   # plot...
@@ -100,9 +100,9 @@ DrawDiatimeIsotropic <- function(x_label = "P", y_label = "A",
   grid.text(y_label, x = ylabelx, y = ylabely)
   if (isoline == TRUE) {
     # ...isolines
-    grid.lines(x = c(0, 0.5), y = c(0.1, 0.9), gp = gpar(lty = "dashed"))
-    grid.lines(x = c(0.33, 0.83), y = c(0.1, 0.9), gp = gpar(lty = "dashed"))
-    grid.lines(x = c(0.66, 1.16), y = c(0.1, 0.9), gp = gpar(lty = "dashed"))
+    grid.lines(x = c(0, 0.5),     y = c(0, 0.9), gp = gpar(lty = "dashed"))
+    grid.lines(x = c(0.33, 0.83), y = c(0, 0.9), gp = gpar(lty = "dashed"))
+    grid.lines(x = c(0.66, 1.16), y = c(0, 0.9), gp = gpar(lty = "dashed"))
     # ...isoline arrow
     grid.lines(x = arrowx, y = arrowy,
                arrow = arrowhead1,
