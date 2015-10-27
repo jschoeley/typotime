@@ -251,10 +251,12 @@ DrawDiatimeIsotropic(y_label = "L", x_label = "C", isoline_label = "D",
                      isoline_flow_direction = "W")
 dev.off()
 
-# TP
-pdf(file = "./fig/TP.pdf", width = width, height = width)
-DrawDiatime(y_label = "T", x_label = "P", isoline = FALSE)
+# TPd
+pdf(file = "./fig/TPd.pdf", width = width, height = width)
+DrawDiatime(y_label = "T", x_label = "P", isoline_label = "D",
+            isoline_orientation = "diagdown", isoline_flow_direction = "E")
 dev.off()
-pdf(file = "./fig/TP_iso.pdf", width = width, height = width)
-DrawDiatimeIsotropic(y_label = "T", x_label = "P", isoline = FALSE)
+pdf(file = "./fig/TPd_iso.pdf", width = width, height = width)
+DrawDiatimeIsotropic(y_label = "T", x_label = "P", isoline_label = "D",
+                     isoline_flow_direction = "E")
 dev.off()
